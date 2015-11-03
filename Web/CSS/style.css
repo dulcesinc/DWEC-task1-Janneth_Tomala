@@ -1,0 +1,74 @@
+body{
+    background: rgba(228, 235, 247, 1);
+    background-position: center center;
+}
+header{
+    height: 200px;
+    background-image:url(../Image/1.jpg);
+    padding-top: .1em;
+    border:hidden 0px #000000;
+    border-radius: 20px 20px 0px 0px;
+    color: #f0ffff;
+    margin-left:4px;
+    margin-right:4px;
+    background-position:center;
+}
+.title-header {
+   text-align: right;
+    margin-top: 4em;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
+}
+.title-container{
+    text-align: center;
+    color: #58595a; text-shadow: #034771 0.1em 0.1em 0.2em
+
+}
+.video-container {
+    width: 100%;
+    border: 1px solid #95A25A;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 1px 7px 1px #888888;
+}
+#play{background-image:url(../Image/play.png);  }
+#pause{background-image:url(../Image/pause.png); }
+#stop{background-image:url(../Image/stop.png); }
+#decreaseV{background-image:url(../Image/decreaseV.png);  }
+#increaseV{background-image:url(../Image/increaseV.png);  }
+#slowD{background-image:url(../Image/slowDown.png);  }
+#speedU{background-image:url(../Image/speedUp.png); }
+#fullS{background-image:url(../Image/full_scream.png);}
+
+#play,#pause, #stop, #decreaseV,#increaseV,#slowD,#speedU,#fullS{
+
+    background-position:center;
+    background-repeat:no-repeat;
+    height:60px;
+    width:60px;
+    border: 1px solid #95A25A;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 7px 1px #888888;
+}
+footer{
+    padding-top: 2em;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

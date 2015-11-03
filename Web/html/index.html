@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> DWEC-task1 </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link href="../CSS/style.css" rel="stylesheet"/>
+</head>
+<header>
+    <h1 class="title-header">Technology</h1>
+</header>
+<body>
+<div class="container">
+    <h1 class="title-container">Video Player</h1>
+
+    <div class="row">
+        <!--<div class="col-xs-1 col-md-12 col-lg-6">-->
+        <div class=".col-xs-10 .col-xs-offset-1 col-md-8 col-md-offset-2 .col-lg-10 .col-lg-offset-1">
+            <video id="myVideo"  class="video-container" poster="../Image/5.jpg">
+                <source src="../video/dummy.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+    </div>
+    <div class="row">
+        <div class=".col-xs-6 .col-xs-offset-3 col-md-6 col-md-offset-3 .col-lg-10 .col-lg-offset-1">
+            <button id ="play"></button>
+            <button id ="pause"></button>
+            <button id ="stop"></button>
+            <button id ="decreaseV"> </button>
+            <button id ="increaseV"> </button>
+            <button id ="slowD"> </button>
+            <button id ="speedU"> </button>
+            <button id ="fullS"></button>
+        </div>
+    </div>
+    <footer>
+        &copy; Copyright Janneth Tomalá
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var video = document.getElementById("myVideo");
+    document.getElementById("play").addEventListener("click", videoPlay, false);
+    document.getElementById("pause").addEventListener("click", videoPause, false);
+    document.getElementById("stop").addEventListener("click", videoStop, false);
+    document.getElementById("decreaseV").addEventListener("click", decreaseVolume, false);
+    document.getElementById("increaseV").addEventListener("click", increaseVolume, false);
+    document.getElementById("slowD").addEventListener("click", slowDown, false);
+    document.getElementById("speedU").addEventListener("click", speedUp, false);
+    document.getElementById("fullS").addEventListener("click", fullScream, false);
+
+    function videoPlay() {
+        video.play();
+    }
+
+    function videoPause() {
+        video.pause();
+    }
+    function videoStop() {
+        video.currentTime=0;
+        video.pause();
+    }
+    function decreaseVolume(){
+        setVolumen(-0.1);
+    };
+    function increaseVolume(){
+        setVolumen(0.1);
+    };
+    function setVolumen(value) {
+        // console.log(video.volume);
+        var vol = video.volume;
+        vol += value;
+        if (vol >= 0 && vol <= 1) {
+            video.volume = vol;
+            console.log(video.volume);
+        } else {
+            video.volume = (vol < 0) ? 0 : 1;
+        }
+    }
+    function slowDown(){
+        video.playbackRate -= .25;
+    };
+    function speedUp(){
+        video.playbackRate += .25;
+    };
+    function fullScream(){
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullScreen) {
+            video.webkitRequestFullScreen();
+        } else if (video.msRequestFullScreen) {
+            video.msRequestFullScreen();
+        }
+    }
+</script>
+</body>
+</html>
